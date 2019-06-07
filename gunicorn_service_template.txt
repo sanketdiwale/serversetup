@@ -1,0 +1,15 @@
+[Unit]
+Description=gunicorn daemon
+Requires=sitex.socket
+After=network.target
+[Service]
+User=yourUsername
+Group=yourUsername
+WorkingDirectory=/home/yourUsername/sites/sitex
+ExecStart=/home/yourUsername/.pyenv/shims/gunicorn \
+ --access-logfile - \
+ --workers 3 \
+ --bind unix:/run/sitex.sock \
+sitex.wsgi:application
+[Install]
+WantedBy=multi-user.target

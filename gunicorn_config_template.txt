@@ -1,0 +1,5 @@
+command = '/home/yourUsername/.pyenv/shims/gunicorn'
+pythonpath = '/home/yourUsername/sites/sitex'
+bind = '127.0.0.1:PORT'
+workers = 3
+user = 'yourUsername'
