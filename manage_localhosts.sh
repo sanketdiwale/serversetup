@@ -10,7 +10,7 @@ IP="127.0.0.1"
 # Hostname to add/remove.
 HOSTNAME=$1
 
-function removehost {
+removehost () {
     if [ -n "$(grep $HOSTNAME /etc/hosts)" ]
     then
         echo "$HOSTNAME Found in your $ETC_HOSTS, Removing now...";
@@ -20,7 +20,7 @@ function removehost {
     fi
 }
 
-function addhost {
+addhost () {
     HOSTNAME=$1
     HOSTS_LINE="$IP\t$HOSTNAME"
     if [ -n "$(grep $HOSTNAME /etc/hosts)" ]
