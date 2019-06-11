@@ -1,7 +1,6 @@
 import argparse
 import getpass 
 import os
-import subprocess
 import json
 
 parser = argparse.ArgumentParser(description='Process some strings')
