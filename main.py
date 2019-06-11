@@ -3,7 +3,7 @@ import getpass
 import os
 import subprocess
 import json
-from IPython import embed
+
 parser = argparse.ArgumentParser(description='Process some strings')
 parser.add_argument('User',metavar='User',type=str,help='provide username under whose homefolder the project files are stored')
 parser.add_argument('Sitename',metavar='Sitename',type=str,help='provide foldername under which the project files are stored')
@@ -13,7 +13,6 @@ args = parser.parse_args()
 # add site to /etc/hosts
 # requires once, execution of chmod +x manage_localhosts.sh
 os.system('. ./manage_localhosts.sh && addhost '+args.SiteURL)
-embed()
 # setup nginx config
 os.system('sudo python nginx_setup.py '+args.User+' '+args.Sitename+' '+args.SiteURL)
 print('nginx setup complete')
